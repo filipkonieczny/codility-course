@@ -38,10 +38,10 @@ def solution(N, A):
         # if not, then increase counter by 1
         else:
             counters[i - 1] += 1
-            foo = counters[i - 1]
+            current_counter_value = counters[i - 1]
 
-            if foo > max_counter:
-                max_counter = foo
+            if current_counter_value  > max_counter:
+                max_counter = current_counter_value
 
 
     # return the values of counters
