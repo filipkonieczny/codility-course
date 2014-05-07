@@ -2,7 +2,7 @@
 # encoding: utf-8
 
 
-# Lesson 3 - Prefix Sums - Max Product of Three
+# Lesson 4 - Sorting - Max Product of Three
 # https://codility.com/demo/take-sample-test/max_product_of_three
 
 

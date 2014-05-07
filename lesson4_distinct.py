@@ -2,7 +2,7 @@
 # encoding: utf-8
 
 
-# Lesson 3 - Prefix Sums - Distinct
+# Lesson 4 - Sorting - Distinct
 # https://codility.com/demo/take-sample-test/distinct
 
 
