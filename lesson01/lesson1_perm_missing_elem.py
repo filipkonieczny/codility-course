@@ -19,6 +19,7 @@ def solution(array):
 
     '''
 
+    array_length = len(array)
     array_sum = sum(array)
-    expected_sum = sum(xrange(1, len(array) + 2))
+    expected_sum = (array_length + 1) * (array_length + 2) // 2
     return expected_sum - array_sum
