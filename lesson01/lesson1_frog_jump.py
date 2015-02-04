@@ -6,38 +6,23 @@
 # https://codility.com/demo/take-sample-test/frog_jmp
 
 
-def solution(X, Y, D):
+def solution(start_pos, finish_pos, jumping_distance):
     '''
-    This function takes start and finish positions.
-    Calculates how many jumps are needed to get there.
+    Takes start and finish positions, along with a jumping distance.
+    Calculates how many jumps are needed to get from start to finish.
 
     (int, int, int) -> int
-    
-    
+
+
     >>> solution(10, 85, 30)
     3
-    
+
     '''
-    
-    
-    # declare variables
-    min_jumps = 0
-    foo = 0
-    
-    
+
     # calculate the minimum number of jumps
-    if Y > X:
-        foo = (Y - X) / D
-        
-        if ((Y - X) % D) != 0:
-            min_jumps = foo + 1
-        
-        else:
-            min_jumps = foo
-    
+    travel_distance = finish_pos - start_pos
+
+    if travel_distance % jumping_distance:
+        return travel_distance / jumping_distance + 1
     else:
-        return 0
-    
-    
-    # return the result
-    return min_jumps
+        return travel_distance / jumping_distance
