@@ -22,31 +22,16 @@ def solution(X, A):
     
     '''
     
+    sum_all = sum(xrange(1, X + 1))
+    current_sum = 0
+    
+    leaves_set = set()
+    
+    for position, i in enumerate(A):
+        if i not in leaves_set:
+            current_sum += i
+            leaves_set.add(i)
 
-    # declare variables
-    K = 0
-    leaves = [0] * X
-    number_of_leaves = 0
-
-
-    # go through the list
-    for i, item in enumerate(A):
-        if item <= X:
-            if leaves[item - 1] == 0:
-                number_of_leaves += 1
-
-                if number_of_leaves == X:
-                    K = i
-                    break
-
-            leaves[item - 1] += 1
-
-
-    # return the result
-    # if not enough leaves found
-    if number_of_leaves != X:
-        return -1
-
-    # if enough leaves found
-    else:
-        return K
+        if current_sum == sum_all:
+            return position
+    return -1
