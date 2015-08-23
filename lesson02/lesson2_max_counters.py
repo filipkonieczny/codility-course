@@ -22,27 +22,25 @@ def solution(N, A):
     
     '''
     
-
-    # declare variables
     counters = [0] * N
-    max_counter = 0
     increased_N = N + 1
+    max_value = 0
+    current_counter = 0
 
-
-    # calculate the value of counters
     for i in A:
-        # check if to perform increase all counters
-        if i == increased_N:
-            counters = [max_counter] * N
+        if i < increased_N:
+            if counters[i - 1] < current_counter:
+                counters[i - 1] = current_counter
 
-        # if not, then increase counter by 1
-        else:
             counters[i - 1] += 1
-            current_counter_value = counters[i - 1]
 
-            if current_counter_value  > max_counter:
-                max_counter = current_counter_value
+            if counters[i - 1] > max_value:
+                max_value = counters[i - 1]
+        else:
+            current_counter = max_value
 
+    for i in xrange(N):
+        if counters[i] < current_counter:
+            counters[i] = current_counter
 
-    # return the values of counters
     return counters
